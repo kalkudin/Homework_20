@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Homework_20</string>
+    <string name="first_name">first name</string>
+    <string name="last_name">last name</string>
+    <string name="email">email</string>
+    <string name="age">age</string>
+    <string name="add_user">add user</string>
+    <string name="update_user">update user</string>
+    <string name="delete_user">delete_user</string>
+</resources>
