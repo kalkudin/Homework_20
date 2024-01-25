@@ -1,9 +1,10 @@
-package com.example.homework_20.data.repository
+package com.example.homework_20.data.remote.repository
 
 import android.util.Log
-import com.example.homework_20.data.dao.UserAccountDao
-import com.example.homework_20.data.entities.UserEntity
-import com.example.homework_20.data.mapper.toEntity
+import com.example.homework_20.data.remote.dao.UserAccountDao
+import com.example.homework_20.data.remote.entities.UserEntity
+import com.example.homework_20.data.remote.mapper.toDomain
+import com.example.homework_20.data.remote.mapper.toEntity
 import com.example.homework_20.domain.model.UserAccount
 import com.example.homework_20.domain.repository.UserAccountRepository
 import kotlinx.coroutines.flow.Flow
@@ -26,18 +27,9 @@ class UserAccountRepositoryImpl @Inject constructor(private val userAccountDao: 
         userAccountDao.update(user.toEntity())
     }
 
-    override fun getAllUsers(): Flow<List<UserAccount>> {
-        return userAccountDao.getAllUsers().map { entities ->
+    override fun getUsersByEmail(email: String): Flow<List<UserAccount>> {
+        return userAccountDao.getUsersByEmail(email).map { entities ->
             entities.map { it.toDomain() }
         }
-    }
-
-    private fun UserEntity.toDomain(): UserAccount {
-        return UserAccount(
-            firstName = firstName,
-            lastName = lastName,
-            email = email,
-            age = age
-        )
     }
 }

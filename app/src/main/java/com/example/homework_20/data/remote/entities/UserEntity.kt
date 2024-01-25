@@ -1,4 +1,4 @@
-package com.example.homework_20.data.entities
+package com.example.homework_20.data.remote.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

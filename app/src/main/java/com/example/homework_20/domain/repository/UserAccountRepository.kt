@@ -7,5 +7,5 @@ interface UserAccountRepository {
     suspend fun addNewUser(user : UserAccount)
     suspend fun deleteUser(user : UserAccount)
     suspend fun updateUser(user : UserAccount)
-    fun getAllUsers(): Flow<List<UserAccount>>
+    fun getUsersByEmail(email: String): Flow<List<UserAccount>>
 }

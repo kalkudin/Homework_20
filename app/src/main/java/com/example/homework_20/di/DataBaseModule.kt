@@ -2,8 +2,8 @@ package com.example.homework_20.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.homework_20.data.dao.UserAccountDao
-import com.example.homework_20.data.data_base.UserAccountDatabase
+import com.example.homework_20.data.remote.dao.UserAccountDao
+import com.example.homework_20.data.remote.data_base.UserAccountDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

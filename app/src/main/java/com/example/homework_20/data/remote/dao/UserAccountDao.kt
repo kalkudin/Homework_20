@@ -1,7 +1,7 @@
-package com.example.homework_20.data.dao
+package com.example.homework_20.data.remote.dao
 
 import androidx.room.*
-import com.example.homework_20.data.entities.UserEntity
+import com.example.homework_20.data.remote.entities.UserEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -16,6 +16,6 @@ interface UserAccountDao {
     @Update
     suspend fun update(user: UserEntity)
 
-    @Query("SELECT * FROM users")
-    fun getAllUsers(): Flow<List<UserEntity>>
+    @Query("SELECT * FROM users WHERE email = :email")
+    fun getUsersByEmail(email: String): Flow<List<UserEntity>>
 }

@@ -1,6 +1,6 @@
-package com.example.homework_20.data.mapper
+package com.example.homework_20.data.remote.mapper
 
-import com.example.homework_20.data.entities.UserEntity
+import com.example.homework_20.data.remote.entities.UserEntity
 import com.example.homework_20.domain.model.UserAccount
 
 fun UserAccount.toEntity(): UserEntity {
